@@ -1,19 +1,3 @@
-{
-  "err_login": "error_login.html",
-  "err_account_invalid": "invalid_account.html",
-  "deconnecter": "logout.html",
-  "connecter": "panel.html",
-  "votre_lcid": "",
-  "moyen_de_contact": "",
-  "pseudo_de_contact": "",
-  "email": "",
-  "service": "howard",
-  "version_j": "v1.0",
-  "version_l": "v1ab",
-  "version_a": "v1ab",
-  "version_p": "v1ab",
-  "version": "2.07"
-},
 
 {
   "officialJsonUrls": [
