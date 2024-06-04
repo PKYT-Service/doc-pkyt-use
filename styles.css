@@ -57,7 +57,8 @@ body {
 /* Styles pour l'iframe de contenu */
 #contentFrame {
   width: 100%;
-  height: calc(100vh - 40px); /* Pour tenir compte des marges du conteneur du contenu */
+  /*height: calc(100vh - 40px); */ /* Pour tenir compte des marges du conteneur du contenu */
+  height: 100%;
   border: none;
   transition: opacity 0.5s;
   opacity: 0;
