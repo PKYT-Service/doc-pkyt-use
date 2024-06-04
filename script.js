@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", function() {
     if (menuContainer.classList.contains('menu-hidden')) {
       menuContainer.classList.remove('menu-hidden');
       menuToggle.textContent = '✖'; // Icône de fermeture
-      contentFrame.classList.add('full-width');
+      contentFrame.classList.remove('iframe-left');
     } else {
       menuContainer.classList.add('menu-hidden');
       menuToggle.textContent = '☰'; // Icône hamburger
-      contentFrame.classList.remove('full-width');
+      contentFrame.classList.add('iframe-left');
     }
   });
 
