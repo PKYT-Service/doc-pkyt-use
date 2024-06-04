@@ -17,6 +17,20 @@ body {
   position: relative;
   transition: transform 0.3s ease;
 }
+/* Styles pour le conteneur du contenu */
+#content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  transition: margin-left 0.3s ease; /* Ajout de la transition */
+}
+
+/* Masquer le contenu lorsque le menu est ouvert */
+#menu-container:not(.menu-hidden) + #content {
+  margin-left: 250px; /* Largeur du menu */
+}
+
+
 
 /* Masquer le menu par défaut sur mobile */
 .menu-hidden {
