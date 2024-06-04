@@ -17,7 +17,7 @@
 
 {
     "jsonUrls": [
-        "URL_DU_FICHIER_JSON_1",
+        "https://raw.githubusercontent.com/PKYT-Service/forum-publique/main/forum-pkyt.json",
         "URL_DU_FICHIER_JSON_2",
         "URL_DU_FICHIER_JSON_3"
     ]
