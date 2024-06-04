@@ -1,14 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
   const menuToggle = document.getElementById('menu-toggle');
   const menuContainer = document.getElementById('menu-container');
+  const contentFrame = document.getElementById('contentFrame');
 
   menuToggle.addEventListener('click', function() {
     if (menuContainer.classList.contains('menu-hidden')) {
       menuContainer.classList.remove('menu-hidden');
       menuToggle.textContent = '✖'; // Icône de fermeture
+      contentFrame.classList.add('full-width');
     } else {
       menuContainer.classList.add('menu-hidden');
       menuToggle.textContent = '☰'; // Icône hamburger
+      contentFrame.classList.remove('full-width');
     }
   });
 
@@ -53,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function() {
   // Fonction pour afficher le menu
   function afficherMenu(data, isOfficial) {
     const menu = document.getElementById('menu');
-    const contentFrame = document.getElementById('contentFrame');
 
     // Ajouter l'indicateur officiel ou non officiel en premier
     const indicator = document.createElement('div');
