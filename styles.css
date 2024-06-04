@@ -4,6 +4,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   height: 100vh;
+  overflow: hidden;
 }
 
 /* Styles pour le conteneur du menu */
@@ -13,6 +14,43 @@ body {
   padding: 20px;
   border-right: 1px solid #ccc;
   overflow-y: auto;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+/* Masquer le menu par défaut sur mobile */
+.menu-hidden {
+  transform: translateX(-100%);
+}
+
+/* Styles pour le bouton de menu */
+.menu-toggle {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Styles pour le conteneur du contenu */
+#content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Styles pour l'iframe de contenu */
+#contentFrame {
+  width: 100%;
+  height: calc(100vh - 40px); /* Pour tenir compte des marges du conteneur du contenu */
+  border: none;
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+
+#contentFrame.show {
+  opacity: 1;
 }
 
 /* Styles pour chaque catégorie */
@@ -72,24 +110,4 @@ body {
   font-size: 14px;
   color: red;
   margin-left: 10px;
-}
-
-/* Styles pour le conteneur du contenu */
-#content {
-  flex-grow: 1;
-  padding: 20px;
-  overflow-y: auto;
-}
-
-/* Styles pour l'iframe de contenu */
-#contentFrame {
-  width: 100%;
-  height: calc(100vh - 40px); /* Pour tenir compte des marges du conteneur du contenu */
-  border: none;
-  transition: opacity 0.5s;
-  opacity: 0;
-}
-
-#contentFrame.show {
-  opacity: 1;
 }
