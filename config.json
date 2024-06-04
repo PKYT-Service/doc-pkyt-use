@@ -13,4 +13,12 @@
   "version_a": "v1ab",
   "version_p": "v1ab",
   "version": "2.07"
+},
+
+{
+    "jsonUrls": [
+        "URL_DU_FICHIER_JSON_1",
+        "URL_DU_FICHIER_JSON_2",
+        "URL_DU_FICHIER_JSON_3"
+    ]
 }
