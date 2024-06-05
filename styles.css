@@ -15,25 +15,14 @@ body {
   border-right: 1px solid #ccc;
   overflow-y: auto;
   position: relative;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, width 0.3s ease;
 }
-/* Styles pour le conteneur du contenu */
-#content {
-  flex-grow: 1;
-  padding: 20px;
-  overflow-y: auto;
-  transition: margin-left 0.3s ease; /* Ajout de la transition */
-}
-
-/* Masquer le contenu lorsque le menu est ouvert */
-#menu-container:not(.menu-hidden) + #content {
-  margin-left: 250px; /* Largeur du menu */
-}
-
-
 
 /* Masquer le menu par défaut sur mobile */
 .menu-hidden {
+  width: 0;
+  padding: 0;
+  border-right: none;
   transform: translateX(-100%);
 }
 
@@ -50,17 +39,16 @@ body {
 /* Styles pour le conteneur du contenu */
 #content {
   flex-grow: 1;
-  padding: 20px;
   overflow-y: auto;
+  transition: margin-left 0.3s ease; /* Ajout de la transition */
 }
 
 /* Styles pour l'iframe de contenu */
 #contentFrame {
   width: 100%;
-  /*height: calc(100vh - 40px); */ /* Pour tenir compte des marges du conteneur du contenu */
   height: 100%;
   border: none;
-  transition: opacity 0.5s;
+  transition: opacity 0.5s, width 0.3s;
   opacity: 0;
 }
 
