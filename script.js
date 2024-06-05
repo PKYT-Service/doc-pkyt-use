@@ -7,13 +7,25 @@ document.addEventListener("DOMContentLoaded", function() {
     if (menuContainer.classList.contains('menu-hidden')) {
       menuContainer.classList.remove('menu-hidden');
       menuToggle.textContent = '✖'; // Icône de fermeture
-      contentFrame.classList.remove('iframe-left');
     } else {
       menuContainer.classList.add('menu-hidden');
       menuToggle.textContent = '☰'; // Icône hamburger
-      contentFrame.classList.add('iframe-left');
     }
+    // Ajuster la largeur du contenu en fonction de l'état du menu
+    adjustContentWidth();
   });
+
+  // Fonction pour ajuster la largeur du contenu
+  function adjustContentWidth() {
+    if (menuContainer.classList.contains('menu-hidden')) {
+      contentFrame.style.width = '100%';
+    } else {
+      contentFrame.style.width = `calc(100% - ${menuContainer.offsetWidth}px)`;
+    }
+  }
+
+  // Initial call to set the correct width on page load
+  adjustContentWidth();
 
   // Récupérer les URLs des fichiers JSON à partir du fichier de configuration
   fetch('config.json')
