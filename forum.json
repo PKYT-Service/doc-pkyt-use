@@ -19,6 +19,10 @@
                 "site name": "Documentation : ",
                 "url": "https://pkyt-database-up.vercel.app/pkyt-use.html"
             }
+                        {
+                "site name": "Quelles sont les erreurs PKYT ?  : ",
+                "url": "https://pkyt-database-up.vercel.app/doc/use/erreur-pkyt-use.html"
+            }
         ]
     }
 ]
