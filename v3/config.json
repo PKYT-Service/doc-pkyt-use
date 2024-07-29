@@ -3,20 +3,20 @@
         "title": "LosFLy LG",
         "title_meta": "Connexion Actif",
         "description_meta": "dsf",
-        "ico_web": "",
-        "ico_meta": "",
-        "link_meta": "",
+        "ico_web": "N",
+        "ico_meta": "N",
+        "link_meta": "N",
         "web_type": "Forum"
     ],
       "config": [
-        "contact": "",
-        "compte_owner": "",
+        "contact": "N",
+        "compte_owner": "N",
         "service": "pkyt",
-        "version_json": "",
-        "version_html": "",
-        "version_js": "",
-        "version_panel": "",
-        "version_patch": ""
+        "version_json": "N",
+        "version_html": "N",
+        "version_js": "N",
+        "version_panel": "N",
+        "version_patch": "N"
     ],
           "redirection": [
         "connexion_accepter": "./admin.html",
@@ -25,8 +25,8 @@
     ],
     
       "web-history": [
-        "discord": "",
-        "title": "",
+        "discord": "N",
+        "title": "N",
         "basique_id": false,
         "user_id": false,
         "account_email": false,
