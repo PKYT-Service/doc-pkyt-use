@@ -1,0 +1,35 @@
+{
+    "web-details": [
+        "title": "",
+        "title_meta": "",
+        "description_meta": "",
+        "ico_web": "",
+        "ico_meta": "",
+        "link_meta": "",
+        "web_type": "Forum"
+    ],
+      "config": [
+        "contact": "",
+        "compte_owner": "",
+        "service": "",
+        "version_json": "",
+        "version_html": "",
+        "version_js": "",
+        "version_panel": "",
+        "version_patch": ""
+    ],
+          "redirection": [
+        "connexion_accepter": "./admin.html",
+        "connecion_refuser": "#error",
+        "account_introuvable": "#errpr"
+    ],
+    
+      "web-history": [
+        "discord": "",
+        "title": "",
+        "basique_id": false,
+        "user_id": false,
+        "account_email": false,
+        "url_page": false
+    ]
+}
