@@ -8,7 +8,7 @@
         "link_meta": "N",
         "web_type": "Forum"
     ],
-      "config": [
+    "config": [
         "contact": "N",
         "compte_owner": "N",
         "service": "pkyt",
@@ -18,18 +18,31 @@
         "version_panel": "N",
         "version_patch": "N"
     ],
-          "redirection": [
+    "redirection": [
         "connexion_accepter": "./admin.html",
         "connecion_refuser": "#error",
         "account_introuvable": "#errpr"
     ],
-    
-      "web-history": [
+    "web-history": [
         "discord": "N",
         "title": "N",
         "basique_id": false,
         "user_id": false,
         "account_email": false,
         "url_page": false
-    ]
+    ],
+    "ban": {
+        "ban_account": [
+            "example_account1",
+            "example_account2"
+        ],
+        "ban_ipbasic": [
+            "192.168.1.1",
+            "10.0.0.1"
+        ],
+        "ban_ipuser": [
+            "203.0.113.1",
+            "198.51.100.1"
+        ]
+    }
 }
