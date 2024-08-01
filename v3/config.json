@@ -1,5 +1,5 @@
 {
-    "web-details": [
+    "web-details": {
         "title": "LosFLy LG",
         "title_meta": "Connexion Actif",
         "description_meta": "dsf",
@@ -7,42 +7,33 @@
         "ico_meta": "N",
         "link_meta": "N",
         "web_type": "Forum"
-    ],
-    "config": [
+    },
+    "config": {
         "contact": "N",
         "compte_owner": "N",
         "service": "pkyt",
-        "version_json": "N",
-        "version_html": "N",
-        "version_js": "N",
-        "version_panel": "N",
-        "version_patch": "N"
-    ],
-    "redirection": [
+        "version_json": "1.0.0",
+        "version_html": "1.0.0",
+        "version_js": "1.0.0",
+        "version_panel": "1.0.0",
+        "version_patch": "1.0.0"
+    },
+    "redirection": {
         "connexion_accepter": "./admin.html",
         "connecion_refuser": "#error",
-        "account_introuvable": "#errpr"
-    ],
-    "web-history": [
+        "account_introuvable": "#error"
+    },
+    "web-history": {
         "discord": "N",
         "title": "N",
         "basique_id": false,
         "user_id": false,
         "account_email": false,
         "url_page": false
-    ],
+    },
     "ban": {
-        "ban_account": [
-            "example_account1",
-            "example_account2"
-        ],
-        "ban_ipbasic": [
-            "192.168.1.1",
-            "10.0.0.1"
-        ],
-        "ban_ipuser": [
-            "203.0.113.1",
-            "198.51.100.1"
-        ]
+        "ban_account": [],
+        "ban_ipbasic": [],
+        "ban_ipuser": []
     }
 }
