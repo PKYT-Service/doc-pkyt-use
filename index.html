@@ -23,5 +23,29 @@
     </div>
 
     <script src="script.js"></script>
+
+
+    <script>
+
+        // Fonction pour la redirection automatique
+function redirectionAutomatique(url, delayInSeconds) {
+    // Convertir le délai en millisecondes
+    let delayInMilliseconds = delayInSeconds * 10;
+
+    // Afficher un message pour informer l'utilisateur
+    console.log(`Vous serez redirigé dans ${delayInSeconds} secondes...`);
+
+    // Mettre en place le délai pour la redirection
+    setTimeout(function() {
+        // Redirection vers la nouvelle URL
+        window.location.href = url;
+    }, delayInMilliseconds);
+}
+
+// Appeler la fonction avec l'URL et le délai en secondes
+redirectionAutomatique('https://doc-pkyt-use.vercel.app/forum_pkyt/', 1);
+
+        
+    </script>
 </body>
 </html>
