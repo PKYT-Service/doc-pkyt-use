@@ -88,6 +88,22 @@
             const iframe = document.getElementById('iframe');
             iframe.src = url;
         }
+
+        // verification du rules 
+// Vérifier si l'URL contient #conditions
+if (window.location.hash === '#conditions') {
+    // Trouver l'élément iframe sur la page
+    let iframe = document.querySelector('iframe');
+    
+    // Vérifier si l'iframe existe
+    if (iframe) {
+        // Changer la source de l'iframe
+        iframe.src = 'https://doc-pkyt-use.vercel.app/forum_pkyt/page/cdt_web_pkyt.html';
+    } else {
+        console.warn('Aucun élément iframe trouvé sur la page.');
+    }
+}
+
     </script>
 <script src="https://pkyt-database-up.vercel.app/code-source/tout-service-lier-pkyt.js"></script>
 </body>
