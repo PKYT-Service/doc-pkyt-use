@@ -87,12 +87,16 @@
        
 
 // Vérifier si l'URL contient #conditions
-window.addEventListener('load', function() {
+
+        window.addEventListener('load', function() {
     // Fonction pour vérifier la règle et changer la source de l'iframe
     function verifierHashEtChangerIframe(hashAttendu, nouvelleSrc) {
         const hashActuel = window.location.hash;
         console.log("Hash actuel : " + hashActuel);  // Debug
+
+        // Vérifier si le hash actuel correspond à celui attendu
         if (hashActuel === hashAttendu) {
+            console.log("Hash correspond à : " + hashAttendu);  // Debug
             let iframe = document.querySelector('iframe');
             if (iframe) {
                 console.log("Iframe trouvé, changement de source vers : " + nouvelleSrc);  // Debug
@@ -100,6 +104,8 @@ window.addEventListener('load', function() {
             } else {
                 console.warn('Aucun élément iframe trouvé sur la page.');
             }
+        } else {
+            console.log("Le hash ne correspond pas. Attendu : " + hashAttendu);  // Debug
         }
     }
 
