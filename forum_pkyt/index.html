@@ -109,6 +109,21 @@
         }
     }
 
+
+
+
+                    function loadPage(url) {
+            const iframe = document.getElementById('iframe');
+            iframe.src = url;
+        }
+
+
+
+
+
+
+            
+
     // Délais de 2 secondes avant d'exécuter la vérification
     setTimeout(function() {
         verifierHashEtChangerIframe('#conditions', 'https://doc-pkyt-use.vercel.app/forum_pkyt/page/cdt_web_pkyt.html');
