@@ -87,22 +87,28 @@
        
 
 // Vérifier si l'URL contient #conditions
-
-        // Fonction pour vérifier la règle et changer la source de l'iframe
-function verifierHashEtChangerIframe(hashAttendu, nouvelleSrc) {
-    if (window.location.hash === hashAttendu) {
-        let iframe = document.querySelector('iframe');
-        if (iframe) {
-            iframe.src = nouvelleSrc;
-        } else {
-            console.warn('Aucun élément iframe trouvé sur la page.');
+window.addEventListener('load', function() {
+    // Fonction pour vérifier la règle et changer la source de l'iframe
+    function verifierHashEtChangerIframe(hashAttendu, nouvelleSrc) {
+        const hashActuel = window.location.hash;
+        console.log("Hash actuel : " + hashActuel);  // Debug
+        if (hashActuel === hashAttendu) {
+            let iframe = document.querySelector('iframe');
+            if (iframe) {
+                console.log("Iframe trouvé, changement de source vers : " + nouvelleSrc);  // Debug
+                iframe.src = nouvelleSrc;
+            } else {
+                console.warn('Aucun élément iframe trouvé sur la page.');
+            }
         }
     }
-}
 
-// Vérifier les différentes conditions
-verifierHashEtChangerIframe('#conditions', 'https://doc-pkyt-use.vercel.app/forum_pkyt/page/cdt_web_pkyt.html');
-verifierHashEtChangerIframe('#discordpkytcdt', 'https://doc-pkyt-use.vercel.app/forum_pkyt/page/cdt_discord-PKYT.html');
+    // Délais de 2 secondes avant d'exécuter la vérification
+    setTimeout(function() {
+        verifierHashEtChangerIframe('#conditions', 'https://doc-pkyt-use.vercel.app/forum_pkyt/page/cdt_web_pkyt.html');
+        verifierHashEtChangerIframe('#discord_pikayutmg', 'https://doc-pkyt-use.vercel.app/forum_pkyt/page/cdt_discord-PKYT.html');
+    }, 2000); // 2000 millisecondes = 2 secondes
+});
 
         
 
