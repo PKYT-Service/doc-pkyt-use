@@ -1,28 +1,11 @@
 {
     "sections": [
         {
-            "title": "Section 1",
+            "title": "Howard",
             "links": [
                 {
-                    "name": "Lien 1",
-                    "url": "https://example.com/page1.html"
-                },
-                {
-                    "name": "Lien 2",
-                    "url": "https://example.com/page2.html"
-                }
-            ]
-        },
-        {
-            "title": "Section 2",
-            "links": [
-                {
-                    "name": "Lien 3",
-                    "url": "https://example.com/page3.html"
-                },
-                {
-                    "name": "Lien 4",
-                    "url": "https://example.com/page4.html"
+                    "name": " Bientot",
+                    "url": " "
                 }
             ]
         }
