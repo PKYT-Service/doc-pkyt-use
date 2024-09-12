@@ -48,7 +48,10 @@
 <li><a href="#" onclick="loadPage('https://pkyt-database-up.vercel.app/pkyt-use.html')" class="block py-4 text-center hover:bg-gray-600"> V2 Config [FIN] </a></li>
 
 
-
+    <div class="container">
+        <div id="content"></div>
+        <iframe id="contentFrame"></iframe>
+    </div>
  </ul>
 
         <hr>
@@ -129,7 +132,72 @@ function loadPage(url) {
 
 
 
+   <script>
+        async function loadAccountData() {
+            const account = localStorage.getItem('account');
+            if (!account) {
+                document.getElementById('content').innerHTML = '<p>No account found in localStorage.</p>';
+                return;
+            }
 
+            try {
+                const response = await fetch(`https://pkyt-database-up.vercel.app/account/v3/${account}.json`);
+                const data = await response.json();
+                const serviceName = data.service.nomDuService;
+                
+                const linkResponse = await fetch('./link.json');
+                const linkData = await linkResponse.json();
+                
+                let matchedService = null;
+                for (const key in linkData) {
+                    if (linkData[key] === serviceName) {
+                        matchedService = key;
+                        break;
+                    }
+                }
+
+                if (!matchedService) {
+                    document.getElementById('content').innerHTML = '<p>No matching service found.</p>';
+                    return;
+                }
+
+                const contentResponse = await fetch(linkData[matchedService]);
+                const content = await contentResponse.json();
+
+                let htmlContent = '';
+                for (const section of content.sections) {
+                    htmlContent += `
+                        <div class="section">
+                            <center>
+                                <hr>
+                                <b>${section.title}</b>
+                                <hr>
+                            </center>
+                            <ul>
+                    `;
+                    for (const link of section.links) {
+                        htmlContent += `
+                            <li>
+                                <a href="#" onclick="loadPage('${link.url}')">${link.name}</a>
+                            </li>
+                        `;
+                    }
+                    htmlContent += '</ul></div>';
+                }
+                document.getElementById('content').innerHTML = htmlContent;
+
+            } catch (error) {
+                document.getElementById('content').innerHTML = '<p>Error loading data.</p>';
+                console.error(error);
+            }
+        }
+
+        function loadPage(url) {
+            document.getElementById('iframe').src = url;
+        }
+
+        window.onload = loadAccountData;
+    </script>
 
 
 
