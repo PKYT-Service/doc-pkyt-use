@@ -134,7 +134,7 @@ function loadPage(url) {
 
 
     <script>
-      async function loadAccountData() {
+            async function loadAccountData() {
             const account = localStorage.getItem('account');
             if (!account) {
                 document.getElementById('content').innerHTML = '<p>No account found in localStorage.</p>';
