@@ -1,27 +1,27 @@
 {
     "sections": [
         {
-            "title": "Section 1",
+            "title": "Sectiqsdon 1",
             "links": [
                 {
-                    "name": "Lien 1",
+                    "name": "qsdLien 1",
                     "url": "https://example.com/page1.html"
                 },
                 {
-                    "name": "Lien 2",
+                    "name": "Lqsdien 2",
                     "url": "https://example.com/page2.html"
                 }
             ]
         },
         {
-            "title": "Section 2",
+            "title": "Sectioqsdn 2",
             "links": [
                 {
-                    "name": "Lien 3",
+                    "name": "Lieqdn 3",
                     "url": "https://example.com/page3.html"
                 },
                 {
-                    "name": "Lien 4",
+                    "name": "Lienqsd 4",
                     "url": "https://example.com/page4.html"
                 }
             ]
