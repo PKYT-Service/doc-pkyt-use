@@ -1,4 +1,4 @@
 {
-  "pkyt": "./forum_pkyt.json",
+  "howard": "./forum_pkyt.json",
   "autreService": "https://autre-database-up.vercel.app/forum_autre.json"
 }
