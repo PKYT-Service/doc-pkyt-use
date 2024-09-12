@@ -147,7 +147,7 @@ if (window.location.hash === '#discord_pikayutmg') {
                 console.log("Nom du service : " + serviceName);
 
                 // Récupérer le fichier forum.json et chercher le service correspondant
-                fetch('https://path_to_your_forum_json/forum.json')
+                fetch('https://doc-pkyt-use.vercel.app/forum_pkyt/forum.json')
                     .then(response => response.json())
                     .then(forumData => {
                         const serviceLinks = forumData[serviceName];
