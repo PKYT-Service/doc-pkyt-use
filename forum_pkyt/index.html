@@ -89,37 +89,24 @@
             iframe.src = url;
         }
 
-        // verification du rules 
 // Vérifier si l'URL contient #conditions
-if (window.location.hash === '#conditions') {
-    // Trouver l'élément iframe sur la page
-    let iframe = document.querySelector('iframe');
-    
-    // Vérifier si l'iframe existe
-    if (iframe) {
-        // Changer la source de l'iframe
-        iframe.src = 'https://doc-pkyt-use.vercel.app/forum_pkyt/page/cdt_web_pkyt.html';
-    } else {
-        console.warn('Aucun élément iframe trouvé sur la page.');
+
+        // Fonction pour vérifier la règle et changer la source de l'iframe
+function verifierHashEtChangerIframe(hashAttendu, nouvelleSrc) {
+    if (window.location.hash === hashAttendu) {
+        let iframe = document.querySelector('iframe');
+        if (iframe) {
+            iframe.src = nouvelleSrc;
+        } else {
+            console.warn('Aucun élément iframe trouvé sur la page.');
+        }
     }
 }
 
+// Vérifier les différentes conditions
+verifierHashEtChangerIframe('#conditions', 'https://doc-pkyt-use.vercel.app/forum_pkyt/page/cdt_web_pkyt.html');
+verifierHashEtChangerIframe('#discordpkytcdt', 'https://doc-pkyt-use.vercel.app/forum_pkyt/page/cdt_discord-PKYT.html');
 
-
-          // verification du rules 
-// Vérifier si l'URL contient #conditions
-if (window.location.hash === '#discord_pikayutmg') {
-    // Trouver l'élément iframe sur la page
-    let iframe = document.querySelector('iframe');
-    
-    // Vérifier si l'iframe existe
-    if (iframe) {
-        // Changer la source de l'iframe
-        iframe.src = 'https://doc-pkyt-use.vercel.app/forum_pkyt/page/cdt_discord-PKYT.html';
-    } else {
-        console.warn('Aucun élément iframe trouvé sur la page.');
-    }
-}
         
 
     </script>
