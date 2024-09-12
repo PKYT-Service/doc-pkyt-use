@@ -1,4 +1,9 @@
+
+
+
 {
-    "howard": "howard.json",
-    "howard": "ebsayder.json"
+    "howard": [
+        "howard.json",
+        "ebsayder.json"
+    ]
 }
