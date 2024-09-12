@@ -137,7 +137,7 @@ function loadPage(url) {
         async function loadAccountData() {
             const account = localStorage.getItem('account');
             if (!account) {
-                document.getElementById('content').innerHTML = '<p>No account found in localStorage.</p>';
+                document.getElementById('content').innerHTML = '<p>Aucun compte pour un forum entreprise .</p>';
                 return;
             }
 
@@ -152,7 +152,7 @@ function loadPage(url) {
                 // Get the URL(s) for the current service
                 const forumContentUrls = linkData[serviceName] || [];
                 if (forumContentUrls.length === 0) {
-                    document.getElementById('content').innerHTML = '<p>No matching service found.</p>';
+                    document.getElementById('content').innerHTML = '<p> Aucun forum lier au service de votre compte.</p>';
                     return;
                 }
 
@@ -184,7 +184,7 @@ function loadPage(url) {
                 document.getElementById('content').innerHTML = htmlContent;
 
             } catch (error) {
-                document.getElementById('content').innerHTML = '<p>Error loading data.</p>';
+                document.getElementById('content').innerHTML = '<p>Erreur de chargement.</p>';
                 console.error(error);
             }
         }
