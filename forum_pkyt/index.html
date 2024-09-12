@@ -66,31 +66,28 @@
     </div>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            const menuText = document.getElementById('menu-text');
-            const menuItems = document.getElementById('menu-items');
-            
-            // Check the current width of the menu
-            if (menu.style.width === '50px' || menu.style.width === '') {
-                // Expand the menu
-                menu.style.width = '200px';
-                menuText.style.opacity = '0'; // Hide the text
-                menuItems.style.display = 'block'; // Show menu items
-            } else {
-                // Collapse the menu
-                menu.style.width = '50px';
-                menuText.style.opacity = '1'; // Show the text
-                menuItems.style.display = 'none'; // Hide menu items
-            }
-        }
+// Fonction pour basculer le menu
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    const menuText = document.getElementById('menu-text');
+    const menuItems = document.getElementById('menu-items');
 
-       
+    // Vérifier la largeur actuelle du menu
+    if (menu.style.width === '50px' || menu.style.width === '') {
+        // Agrandir le menu
+        menu.style.width = '200px';
+        menuText.style.opacity = '0'; // Masquer le texte
+        menuItems.style.display = 'block'; // Afficher les éléments du menu
+    } else {
+        // Réduire le menu
+        menu.style.width = '50px';
+        menuText.style.opacity = '1'; // Afficher le texte
+        menuItems.style.display = 'none'; // Masquer les éléments du menu
+    }
+}
 
-// Vérifier si l'URL contient #conditions
-
-        window.addEventListener('load', function() {
-    // Fonction pour vérifier la règle et changer la source de l'iframe
+// Vérifier si l'URL contient un hash et changer la source de l'iframe
+window.addEventListener('load', function() {
     function verifierHashEtChangerIframe(hashAttendu, nouvelleSrc) {
         const hashActuel = window.location.hash;
         console.log("Hash actuel : " + hashActuel);  // Debug
@@ -110,21 +107,6 @@
         }
     }
 
-
-
-
-                    function loadPage(url) {
-            const iframe = document.getElementById('iframe');
-            iframe.src = url;
-        }
-
-
-
-
-
-
-            
-
     // Délais de 2 secondes avant d'exécuter la vérification
     setTimeout(function() {
         verifierHashEtChangerIframe('#conditions', 'https://doc-pkyt-use.vercel.app/forum_pkyt/page/cdt_web_pkyt.html');
@@ -133,7 +115,15 @@
     }, 2000); // 2000 millisecondes = 2 secondes
 });
 
-        
+// Fonction pour charger une page dans l'iframe
+function loadPage(url) {
+    const iframe = document.getElementById('iframe');
+    if (iframe) {
+        iframe.src = url;
+    } else {
+        console.warn('Aucun élément iframe trouvé pour charger la page.');
+    }
+}
 
     </script>
 
