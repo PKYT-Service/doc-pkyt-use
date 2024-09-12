@@ -57,6 +57,12 @@
 
 
  </ul>
+
+        <h1 id="service-title">Service</h1>
+<ul id="section-list"></ul>
+
+
+        
     </div>
 
     <!-- Content -->
@@ -123,6 +129,79 @@ if (window.location.hash === '#discord_pikayutmg') {
         
 
     </script>
+
+
+
+    <script>
+    // Vérifier si l'account existe dans le localStorage
+    const account = localStorage.getItem('account');
+
+    if (account) {
+        // Récupérer les données du compte depuis l'API
+        const accountURL = `https://pkyt-database-up.vercel.app/account/v3/${account}.json`;
+        
+        fetch(accountURL)
+            .then(response => response.json())
+            .then(data => {
+                const serviceName = data.service.nomDuService;
+                console.log("Nom du service : " + serviceName);
+
+                // Récupérer le fichier forum.json et chercher le service correspondant
+                fetch('https://path_to_your_forum_json/forum.json')
+                    .then(response => response.json())
+                    .then(forumData => {
+                        const serviceLinks = forumData[serviceName];
+                        
+                        // Si le service correspond, afficher les liens
+                        if (serviceLinks) {
+                            document.getElementById('service-title').innerText = serviceName;
+
+                            const sectionList = document.getElementById('section-list');
+
+                            // Si des sections sont disponibles, les afficher
+                            Object.keys(serviceLinks).forEach(section => {
+                                const sectionData = serviceLinks[section];
+
+                                // Vérifier s'il y a une section
+                                if (sectionData.section) {
+                                    sectionList.innerHTML += `
+                                        <hr>
+                                        <center><b>${sectionData.section}</b></center>
+                                        <hr>
+                                    `;
+                                }
+
+                                // Vérifier s'il y a des liens
+                                if (sectionData.link) {
+                                    sectionData.link.forEach(link => {
+                                        sectionList.innerHTML += `
+                                            <li>
+                                                <a onclick="loadPage('${link.url}')" class="block">
+                                                    ${link.name}
+                                                </a>
+                                            </li>
+                                        `;
+                                    });
+                                }
+                            });
+                        } else {
+                            console.log("Aucun lien trouvé pour le service.");
+                        }
+                    })
+                    .catch(error => console.error('Erreur lors de la récupération du forum.json :', error));
+            })
+            .catch(error => console.error('Erreur lors de la récupération du compte :', error));
+    } else {
+        console.log("Aucun compte trouvé dans le localStorage.");
+    }
+
+    // Fonction pour charger une nouvelle page dans l'iframe (ou rediriger)
+    function loadPage(url) {
+        window.location.href = url;  // Pour rediriger vers une nouvelle page
+    }
+</script>
+
+    
 <script src="https://pkyt-database-up.vercel.app/code-source/tout-service-lier-pkyt.js"></script>
 </body>
 </html>
