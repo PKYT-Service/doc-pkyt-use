@@ -134,7 +134,7 @@ function loadPage(url) {
 
 
     <script>
-        async function loadAccountData() {
+      async function loadAccountData() {
             const account = localStorage.getItem('account');
             if (!account) {
                 document.getElementById('content').innerHTML = '<p>No account found in localStorage.</p>';
@@ -148,37 +148,44 @@ function loadPage(url) {
 
                 const linkResponse = await fetch('./link.json');
                 const linkData = await linkResponse.json();
-                
-                // Find the URL for the current service
-                const forumContentUrl = linkData[serviceName];
-                if (!forumContentUrl) {
+
+                // Get the URL(s) for the current service
+                const forumContentUrls = [];
+                for (const key in linkData) {
+                    if (key === serviceName) {
+                        forumContentUrls.push(linkData[key]);
+                    }
+                }
+
+                if (forumContentUrls.length === 0) {
                     document.getElementById('content').innerHTML = '<p>No matching service found.</p>';
                     return;
                 }
 
-                // Fetch and display the forum content
-                const contentResponse = await fetch(forumContentUrl);
-                const content = await contentResponse.json();
-
                 let htmlContent = '';
-                for (const section of content.sections) {
-                    htmlContent += `
-                        <div class="section">
-                            <center>
-                                <hr>
-                                <b>${section.title}</b>
-                                <hr>
-                            </center>
-                            <ul>
-                    `;
-                    for (const link of section.links) {
+                for (const forumContentUrl of forumContentUrls) {
+                    const contentResponse = await fetch(forumContentUrl);
+                    const content = await contentResponse.json();
+
+                    for (const section of content.sections) {
                         htmlContent += `
-                            <li>
-                                <a href="#" onclick="loadPage('${link.url}')">${link.name}</a>
-                            </li>
+                            <div class="section">
+                                <center>
+                                    <hr>
+                                    <b>${section.title}</b>
+                                    <hr>
+                                </center>
+                                <ul>
                         `;
+                        for (const link of section.links) {
+                            htmlContent += `
+                                <li>
+                                    <a href="#" onclick="loadPage('${link.url}')">${link.name}</a>
+                                </li>
+                            `;
+                        }
+                        htmlContent += '</ul></div>';
                     }
-                    htmlContent += '</ul></div>';
                 }
                 document.getElementById('content').innerHTML = htmlContent;
 
