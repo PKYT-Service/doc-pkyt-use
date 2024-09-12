@@ -1,142 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Info</title>
+    <title>PKYT - Service ADM Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet">
+     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .hidden { display: none; }
-        .block { display: block; }
-        .py-4 { padding: 1rem 0; }
-        .text-center { text-align: center; }
-        .hover\:bg-gray-600:hover { background-color: #4a5568; }
+        .menu-transition {
+            transition: width 0.3s, padding 0.3s;
+        }
+        .menu-text {
+            transition: opacity 0.3s ease-in-out;
+        }
     </style>
 </head>
-<body>
+<body class="flex h-screen m-0 font-sans">
+
+    <!-- Menu -->
+    <div id="menu" class="bg-gray-800 text-white w-52 menu-transition flex-shrink-0 relative">
+        <button onclick="toggleMenu()" class="bg-gray-700 hover:bg-gray-600 w-full py-4 px-2 text-left">
+            PKYT - Service
+        </button>
+        <div id="menu-text" class="menu-text absolute top-0 left-0 right-0 p-4 text-center opacity-0 transition-opacity duration-300">
+            PKYT - Service | Forum 180
+        </div>
+        <ul id="menu-items" class="list-none p-0 m-0 mt-16">
+            <li><a href="#" onclick="loadPage('https://pkyt-database-up.vercel.app/')" class="block py-4 text-center hover:bg-gray-600">Home</a></li>
+
+<hr>
+<center>
+<b>conditions</b>
+</center>
+<hr>
+
+<li><a href="#" onclick="loadPage('https://doc-pkyt-use.vercel.app/forum_pkyt/page/cdt_discord-PKYT.html')" class="block py-4 text-center hover:bg-gray-600"> Discord - PikaYutMG </a></li>
+<li><a href="#" onclick="loadPage('https://doc-pkyt-use.vercel.app/forum_pkyt/page/cdt_web_pkyt.html')" class="block py-4 text-center hover:bg-gray-600"> PKYT / Affilier </a></li>
+            
+
+<hr>
+<center>
+<b> PKYT - Account </b>
+</center>
+<hr>
+
+<li><a href="#" onclick="loadPage('https://doc-pkyt-use.vercel.app/forum_pkyt/page/pkyt_v3_config.html')" class="block py-4 text-center hover:bg-gray-600"> V3 Config </a></li>
+<li><a href="#" onclick="loadPage('https://pkyt-database-up.vercel.app/pkyt-use.html')" class="block py-4 text-center hover:bg-gray-600"> V2 Config [FIN] </a></li>
+<li><a href="#" onclick="loadPage('')" class="block py-4 text-center hover:bg-gray-600"> </a></li>
+<li><a href="#" onclick="loadPage('')" class="block py-4 text-center hover:bg-gray-600"> </a></li>
+<li><a href="#" onclick="loadPage('')" class="block py-4 text-center hover:bg-gray-600"> </a></li>
+<li><a href="#" onclick="loadPage('')" class="block py-4 text-center hover:bg-gray-600"> </a></li>
+<li><a href="#" onclick="loadPage('')" class="block py-4 text-center hover:bg-gray-600"> </a></li>
+<li><a href="#" onclick="loadPage('')" class="block py-4 text-center hover:bg-gray-600"> </a></li>
+<li><a href="#" onclick="loadPage('')" class="block py-4 text-center hover:bg-gray-600"> </a></li>
+<li><a href="#" onclick="loadPage('')" class="block py-4 text-center hover:bg-gray-600"> </a></li>
 
 
-
-
-
-
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Info</title>
-    <style>
-        .hidden { display: none; }
-        .block { display: block; }
-        .py-4 { padding: 1rem 0; }
-        .text-center { text-align: center; }
-        .hover\:bg-gray-600:hover { background-color: #4a5568; }
-    </style>
-</head>
-<body>
-    <div id="service-info">
-        <h1>Service Information</h1>
-        <ul id="service-links"></ul>
+ </ul>
     </div>
 
-
-</body>
-</html>
-
-
-
-
-
-
-    
-
+    <!-- Content -->
+    <div class="flex-1 bg-gray-100 flex justify-center items-center">
+        <iframe id="iframe" src="https://pkyt-database-up.vercel.app/" class="w-full h-full border-none"></iframe>
+    </div>
 
     <script>
-        // Fonction pour charger une page
-        function loadPage(url) {
-            window.location.href = url;
-        }
-
-        // Fonction pour récupérer les données d'un fichier JSON
-        async function fetchJson(url) {
-            try {
-                const response = await fetch(url);
-                return await response.json();
-            } catch (error) {
-                console.error("Erreur lors de la récupération du fichier JSON : ", error);
-                return null;
-            }
-        }
-
-        // Fonction principale
-        async function loadAccountData() {
-            const account = localStorage.getItem('account');
-
-            if (account) {
-                // Récupération des données du compte
-                const accountUrl = `https://pkyt-database-up.vercel.app/account/v3/${account}.json`;
-                const accountData = await fetchJson(accountUrl);
-
-                if (accountData && accountData.service && accountData.service.nomDuService) {
-                    const nomDuService = accountData.service.nomDuService;
-                    console.log("Nom du service : ", nomDuService);
-
-                    // Récupérer le fichier forum.json
-                    const forumData = await fetchJson('https://pkyt-database-up.vercel.app/forum.json');
-
-                    if (forumData) {
-                        const serviceLinksContainer = document.getElementById('service-links');
-                        let serviceFound = false;
-
-                        // Parcourir les services du forum
-                        for (let service in forumData) {
-                            if (service === nomDuService) {
-                                serviceFound = true;
-
-                                // Récupérer les sections du service correspondant
-                                const sectionUrl = forumData[service];
-                                const sectionData = await fetchJson(sectionUrl);
-
-                                if (sectionData) {
-                                    // Afficher la section si présente
-                                    if (sectionData.section) {
-                                        const sectionHtml = `
-                                            <hr>
-                                            <center>
-                                                <b>${sectionData.section}</b>
-                                            </center>
-                                            <hr>
-                                        `;
-                                        serviceLinksContainer.insertAdjacentHTML('beforeend', sectionHtml);
-                                    }
-
-                                    // Afficher les liens si présents
-                                    if (sectionData.link) {
-                                        const linkHtml = `
-                                            <li>
-                                                <a onclick="loadPage('${sectionData.link}')" class="block py-4 text-center hover:bg-gray-600">
-                                                    ${sectionData.linkName || 'Lien'}
-                                                </a>
-                                            </li>
-                                        `;
-                                        serviceLinksContainer.insertAdjacentHTML('beforeend', linkHtml);
-                                    }
-                                }
-                            }
-                        }
-
-                        if (!serviceFound) {
-                            console.log("Aucun service correspondant trouvé.");
-                        }
-                    }
-                }
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const menuText = document.getElementById('menu-text');
+            const menuItems = document.getElementById('menu-items');
+            
+            // Check the current width of the menu
+            if (menu.style.width === '50px' || menu.style.width === '') {
+                // Expand the menu
+                menu.style.width = '200px';
+                menuText.style.opacity = '0'; // Hide the text
+                menuItems.style.display = 'block'; // Show menu items
             } else {
-                console.warn("Aucun compte trouvé dans le localStorage.");
+                // Collapse the menu
+                menu.style.width = '50px';
+                menuText.style.opacity = '1'; // Show the text
+                menuItems.style.display = 'none'; // Hide menu items
             }
         }
 
-        // Charger les données du compte au chargement de la page
-        window.addEventListener('load', loadAccountData);
+        function loadPage(url) {
+            const iframe = document.getElementById('iframe');
+            iframe.src = url;
+        }
+
+        // verification du rules 
+// Vérifier si l'URL contient #conditions
+if (window.location.hash === '#conditions') {
+    // Trouver l'élément iframe sur la page
+    let iframe = document.querySelector('iframe');
+    
+    // Vérifier si l'iframe existe
+    if (iframe) {
+        // Changer la source de l'iframe
+        iframe.src = 'https://doc-pkyt-use.vercel.app/forum_pkyt/page/cdt_web_pkyt.html';
+    } else {
+        console.warn('Aucun élément iframe trouvé sur la page.');
+    }
+}
+
+
+
+          // verification du rules 
+// Vérifier si l'URL contient #conditions
+if (window.location.hash === '#discord_pikayutmg') {
+    // Trouver l'élément iframe sur la page
+    let iframe = document.querySelector('iframe');
+    
+    // Vérifier si l'iframe existe
+    if (iframe) {
+        // Changer la source de l'iframe
+        iframe.src = 'https://doc-pkyt-use.vercel.app/forum_pkyt/page/cdt_discord-PKYT.html';
+    } else {
+        console.warn('Aucun élément iframe trouvé sur la page.');
+    }
+}
+        
+
     </script>
+<script src="https://pkyt-database-up.vercel.app/code-source/tout-service-lier-pkyt.js"></script>
 </body>
 </html>
