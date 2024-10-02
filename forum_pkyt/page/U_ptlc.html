@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pour le pote de lucie</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-gray-900 text-white p-4 text-center">
+        <h1 class="text-3xl font-bold">Configuration PC Gamer (1500€)</h1>
+    </header>
+
+    <main class="max-w-4xl mx-auto p-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Component 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold mb-2">Processeur (CPU)</h2>
+                <p>AMD Ryzen 5 5600X (6 cœurs, 12 threads, 4,6 GHz)</p><font color="red">Intel core I5 13kf recommandé pour les perf</font>
+                <p class="text-gray-500">Prix : ~250€</p>
+            </div>
+
+            <!-- Component 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold mb-2">Carte Graphique (GPU)</h2>
+                <p>NVIDIA GeForce RTX 3060 Ti</p>
+                <p class="text-gray-500">Prix : ~450€</p>
+            </div>
+
+            <!-- Component 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold mb-2">Carte Mère</h2>
+                <p>MSI B550-A PRO</p>
+                <p class="text-gray-500">Prix : ~150€</p>
+            </div>
+
+            <!-- Component 4 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold mb-2">Mémoire RAM</h2>
+                <p>Corsair Vengeance LPX 16 Go (2x8 Go) DDR4 3600 MHz</p>
+                <p class="text-gray-500">Prix : ~90€</p>
+            </div>
+
+            <!-- Component 5 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold mb-2">Stockage (SSD)</h2>
+                <p>Crucial P3 Plus 2 To NVMe M.2</p>
+                <p class="text-gray-500">Prix : ~150€</p>
+            </div>
+
+            <!-- Component 6 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold mb-2">Alimentation (PSU)</h2>
+                <p>Corsair RM750 (750W, 80+ Gold)</p>
+                <p class="text-gray-500">Prix : ~100€</p>
+            </div>
+
+            <!-- Component 7 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold mb-2">Boîtier</h2>
+                <p>NZXT H510</p>
+                <p class="text-gray-500">Prix : ~100€</p>
+            </div>
+
+            <!-- Component 8 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold mb-2">Refroidissement</h2>
+                <p>Be Quiet! Pure Rock 2</p>
+                <p class="text-gray-500">Prix : ~40€</p>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-white p-6 rounded-lg shadow-lg text-center">
+            <h2 class="text-2xl font-bold mb-2">Budget Total Estimé</h2>
+            <p id="total-price" class="text-gray-800 text-3xl font-semibold"></p>
+        </div>
+        <br>
+        <b> Le prix peux varié, sur les sites concourantes ils seront moins chères.</b>
+        <b> <font color="#ffbd15">Consultez cette page assez souvent : Des changement arriverons</font><b>
+    </main>
+
+    <script>
+        // JavaScript to calculate total price
+        const prices = [250, 450, 150, 90, 150, 100, 100, 40];
+        const totalPrice = prices.reduce((acc, price) => acc + price, 0);
+        document.getElementById("total-price").innerText = `${totalPrice}€`;
+    </script>
+</body>
+        </html>
