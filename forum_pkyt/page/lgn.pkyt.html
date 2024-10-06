@@ -102,7 +102,7 @@
                     document.getElementById('message').innerText = 'Vous êtes connecté(e) !';
                     const accountInfo = `${email}-${password}*${service}`;
                     localStorage.setItem('account', accountInfo);
-                    window.location.href = './gestionnaire.html';
+                    window.location.href = 'https://pikayutmg.github.io/';
                 })
                 .catch(error => {
                     document.getElementById('message').innerText = 'Error: ' + error.message;
