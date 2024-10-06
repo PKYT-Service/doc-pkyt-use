@@ -6,69 +6,68 @@
     <title>Connexion administration</title>
     <style>
         body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
         .log {
-    display: inline-block;
-    transform: rotate(270deg);
-}
-h2 {
-    color: #333;
-}
+            display: inline-block;
+            transform: rotate(270deg);
+        }
+        h2 {
+            color: #333;
+        }
 
-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    width: 100%;
-}
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            width: 100%;
+        }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #555;
-}
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
 
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #5cb85c;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-}
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
-button:hover {
-    background-color: #4cae4c;
-}
+        button:hover {
+            background-color: #4cae4c;
+        }
 
-p#message {
-    margin-top: 15px;
-    color: red;
-    font-weight: bold;
-}
-
+        p#message {
+            margin-top: 15px;
+            color: red;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -85,25 +84,31 @@ p#message {
     <p id="message"></p>
 
     <script>
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const service = "pkyt";
-    const url = `https://pkyt-database-up.vercel.app/account/v3/${email}-${password}*${service}.json`;
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const service = "pkyt";
+            const url = `https://pkyt-database-up.vercel.app/account/v3/${email}-${password}*${service}.json`;
 
-    fetch(url)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        
-        .catch(error => {
-            document.getElementById('message').innerText = 'Error: ' + error.message;
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    document.getElementById('message').innerText = 'Vous êtes connecté(e) !';
+                    const accountInfo = `${email}-${password}*${service}`;
+                    localStorage.setItem('account', accountInfo);
+                    window.location.href = './gestionnaire.html';
+                })
+                .catch(error => {
+                    document.getElementById('message').innerText = 'Error: ' + error.message;
+                });
         });
-});
     </script>
 </body>
 </html>
+<script src="https://pkyt-database-up.vercel.app/code-source/pkyt-secure/user-secure/account_ban.js"></script>
