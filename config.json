@@ -1,9 +1,0 @@
-
-{
-  "officialJsonUrls": [
-    "forum.json"
-  ],
-  "unofficialJsonUrls": [
-    "https://raw.githubusercontent.com/PKYT-Service/forum-publique/main/forum-pkyt.json"
-  ]
-}
