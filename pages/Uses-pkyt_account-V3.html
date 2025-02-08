@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PKYT-Service, </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .container {
+            max-width: 1000px;
+        }
+        pre {
+            white-space: pre-wrap; /* Permet le retour à la ligne */
+            word-break: break-word; /* Assure que le texte trop long sera cassé */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-6">
+
+    <!-- Titre -->
+    <h1 class="text-3xl font-bold text-center mb-6">
+        PKYT - Service
+    </h1>
+
+    <!-- Description -->
+    <p class="text-lg text-gray-700 text-center mb-8">
+        Voici l'explication sur l'utilisation
+    </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container mx-auto">
+        <!-- Première règle -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-2">Config.json</h2>
+            <p class="text-gray-600 mb-4">
+              Le fichier config.json vous permettra de configurer le service, de définir les noms des pages à venir, et de suivre les mises à jour et obtenir du support via notre serveur Discord.
+            </p>
+            <pre class="bg-gray-900 text-white p-4 rounded">
+<code>
+-- config.json 
+-- 30.08.2024
+-- By EnesGP
+
+  {
+    "web-details": {
+        "title": " ",
+        "title_meta": " ",
+        "description_meta": " ",
+        "ico_web": " ",
+        "ico_meta": " ",
+        "link_meta": " ",
+        "web_type": "web"
+    },
+    "config": {
+        "contact": " ",
+        "compte_owner": " ",
+        "service": " ",
+        "version_json": "1.0.0",
+        "version_html": "1.0.0",
+        "version_js": "1.0.0",
+        "version_panel": "1.0.0",
+        "version_patch": "1.0.0"
+    },
+    "redirection": {
+        "connexion_accepter": "./admin.html",
+        "connecion_refuser": "#error",
+        "account_introuvable": "#error"
+    },
+    "web-history": {
+        "discord": " ",
+        "title": " ",
+        "basique_id": false,
+        "user_id": false,
+        "account_email": false,
+        "url_page": false
+    },
+    "ban": {
+        "ban_account": [],
+        "ban_ipbasic": [],
+        "ban_ipuser": []
+    }
+}
+  
+ 
+</code>
+            </pre>
+        </div>
+
+
+
+
+<br><br>
+            <span class="flex items-center">
+                <span class="pr-6"><b> Page de connexion :  </b></span>
+                <span class="h-px flex-1 bg-black"></span>
+            </span>
+<br><br>
+
+
+
+ <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-2">login.html</h2>
+            <p class="text-gray-600 mb-4">
+              Le fichier login.html doit toujours etre accompagner d'un config.json ! 
+            </p>
+            <pre class="bg-gray-900 text-white p-4 rounded">
+<code>
+-- login.html 
+-- 30.08.2024
+-- By EnesGP
+
+&lt;!--
+  Heads up! 👋
+
+  Plugins:
+    - @tailwindcss/forms
+--&gt;
+
+&lt;section class="bg-white dark:bg-gray-900"&gt;
+    &lt;div class="lg:grid lg:min-h-screen lg:grid-cols-12"&gt;
+      &lt;aside class="relative block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6"&gt;
+        &lt;img
+          alt=""
+          src="https://pkyt-database-up.vercel.app/code-source/pkyt_v3/file/2.png"
+          class="absolute inset-0 h-full w-full object-cover"
+        /&gt;
+      &lt;/aside&gt;
+  
+      &lt;main
+        class="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6"
+      &gt;
+        &lt;div class="max-w-xl lg:max-w-3xl"&gt;
+   &lt;body class="dark:bg-slate-950"&gt;
+  
+          &lt;h1 class="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl dark:text-white"&gt;
+           Bienvenue chez PKYT - Service ,
+          &lt;/h1&gt;
+  
+          &lt;p class="mt-4 leading-relaxed text-gray-500 dark:text-gray-400"&gt;
+            La connexion est gerer par PKYT - Service , GFLP - LSP / SRDMG Et PikaYutMG ,&lt;br&gt;
+            le service est gerer par la communauter qui gerer la page web [Entrer sur cette page autorise le developpeur a recuperer vos information PKYT - Service] ,&lt;br&gt;
+            ( - Email &lt;br&gt; - ID , ID PKYT , ID bAsique .)
+          &lt;/p&gt;
+  
+          &lt;form id="loginform" class="mt-8 grid grid-cols-6 gap-6"&gt;
+  
+            &lt;div class="col-span-6"&gt;
+              &lt;label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-200"&gt;
+                Email
+              &lt;/label&gt;
+  
+              &lt;input
+                type="email"
+                id="email"
+                name="email"
+                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+              /&gt;
+            &lt;/div&gt;
+  
+            &lt;div class="col-span-6 sm:col-span-3"&gt;
+              &lt;label
+                for="password"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-200"
+              &gt;
+                Mot de passe 
+              &lt;/label&gt;
+  
+              &lt;input
+                type="password"
+                id="password"
+                name="password"
+                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+              /&gt;
+            &lt;/div&gt;
+  
+            &lt;div class="col-span-6 sm:col-span-3"&gt;
+              &lt;label
+                for="passkey"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-200"
+              &gt;
+                Pass Key 
+              &lt;/label&gt;
+  
+              &lt;input
+                type="password"
+                id="passkey"
+                name="password_confirmation"
+                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+              /&gt;
+            &lt;/div&gt;
+  
+            &lt;div class="col-span-6"&gt;
+              &lt;label for="MarketingAccept" class="flex gap-4"&gt;
+                &lt;input
+                  type="checkbox"
+                  id="MarketingAccept"
+                  name="marketing_accept"
+                  class="size-5 rounded-md border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:focus:ring-offset-gray-900"
+                /&gt;
+  
+                &lt;span class="text-sm text-gray-700 dark:text-gray-200"&gt;
+                  J'accepte les conditions PKYT - Service . &lt;font color="#2322ff"&gt;&lt;a href="https://doc-pkyt-use.vercel.app/forum_pkyt/#conditions"&gt;Lire les conditions&lt;/a&gt;&lt;/font&gt;
+                &lt;/span&gt;
+              &lt;/label&gt;
+            &lt;/div&gt;
+  
+            &lt;div class="col-span-6"&gt;
+              &lt;p class="text-sm text-gray-500 dark:text-gray-400"&gt;
+                En créant votre compte , vous acceptez 
+                &lt;a href="https://doc-pkyt-use.vercel.app/forum_pkyt/#conditions" class="text-gray-700 underline dark:text-gray-200"&gt;
+                  &lt;b&gt; les conditions web &lt;/b&gt;
+                &lt;/a&gt;
+                et
+                &lt;a href="https://doc-pkyt-use.vercel.app/forum_pkyt/#conditions2" class="text-gray-700 underline dark:text-gray-200"&gt; la politique PKYT  &lt;/a&gt;.
+              &lt;/p&gt;
+            &lt;/div&gt;
+  
+            &lt;div class="col-span-6 sm:flex sm:items-center sm:gap-4"&gt;
+              &lt;button
+                class="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500 dark:hover:bg-blue-700 dark:hover:text-white"
+              &gt;
+              Se connecter
+              &lt;/button&gt;
+              &lt;p class="mt-4 text-sm text-gray-500 sm:mt-0 dark:text-gray-400"&gt;
+                Créer un compte ?
+                &lt;a href="https://pkyt-database-up.vercel.app/account/v3/c_c/create_an_account.html" class="text-gray-700 underline dark:text-gray-200"&gt;Log in&lt;/a&gt;.
+              &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+          &lt;/form&gt;
+        &lt;/main&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+    &lt;/body&gt;
+  &lt;script src="https://pkyt-database-up.vercel.app/code-source/pkyt_v3/P-connexion_account.js"&gt;&lt;/script&gt;
+  &lt;script src="https://pkyt-database-up.vercel.app/code-source/tout-service-lier-pkyt.js"&gt;&lt;/script&gt;
+
+    
+  
+ 
+</code>
+            </pre>
+        </div>
+
+
+      <br><br>
+            <span class="flex items-center">
+                <span class="pr-6"><b> Admin Panel </b></span>
+                <span class="h-px flex-1 bg-black"></span>
+            </span>
+<br><br>
+
+
+
+ <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-2">admin.html</h2>
+            <p class="text-gray-600 mb-4">
+              Le fichier admin.html doit toujours etre accompagner d'un config.json ! 
+            </p>
+            <pre class="bg-gray-900 text-white p-4 rounded">
+<code>
+-- admin.html 
+-- 30.08.2024
+-- By EnesGP
+
+
+
+
+
+
+
+
+
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt; PKYT - Service , connectez - vous .&lt;/title&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"&gt;
+     &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body class="bg-gray-100"&gt;
+    &lt;div class="min-h-screen flex flex-col items-center justify-center bg-gray-100"&gt;
+        &lt;div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm"&gt;
+            &lt;h2 class="text-2xl font-bold text-center text-gray-800 mb-6"&gt;Connexion&lt;/h2&gt;
+            &lt;form id="loginform" class="space-y-4"&gt;
+                &lt;div&gt;
+                    &lt;label for="email" class="block text-sm font-medium text-gray-700"&gt;Email&lt;/label&gt;
+                    &lt;input type="email" id="email" name="email" required
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="password" class="block text-sm font-medium text-gray-700"&gt;Mot de passe&lt;/label&gt;
+                    &lt;input type="password" id="password" name="password" required
+                        class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"&gt;
+                &lt;/div&gt;
+                &lt;button type="submit"
+                    class="w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"&gt;Se
+                    connecter&lt;/button&gt;
+            &lt;/form&gt;
+            &lt;p class="mt-6 text-center text-sm text-gray-600"&gt;Vous n'avez pas de compte? &lt;a
+                    href="https://pkyt-database-up.vercel.app/account/v3/c_c/create_an_account.html"
+                    class="text-indigo-600 font-medium hover:text-indigo-500"&gt;S'inscrire&lt;/a&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script src="https://pkyt-database-up.vercel.app/code-source/pkyt_v3/P-connexion_account.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+
+
+
+
+
+
+
+
+
+
+    
+  
+ 
+</code>
+            </pre>
+        </div>
+      
+
+<br><br>
+
+       <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-2">admin.html</h2>
+            <p class="text-gray-600 mb-4">
+              Les ID pour afficher les info profiles tels que :   
+            </p>
+            <pre class="bg-gray-900 text-white p-4 rounded">
+<code>
+-- User Profile : 
+-- 30.08.2024
+-- By EnesGP
+
+  PKYT - Service Info: 
+
+        &lt;p id="json-infoCompte-email"&gt;Loading email...&lt;/p&gt;
+        &lt;p id="json-infoCompte-dateCreation"&gt;Loading dateCreation...&lt;/p&gt;
+        &lt;p id="json-infoCompte-pKytUser"&gt;Loading pKytUser...&lt;/p&gt;
+        &lt;p id="json-infoCompte-lcid"&gt;Loading lcid...&lt;/p&gt;
+
+Service info : 
+
+        &lt;p id="json-service-nomDuService"&gt;Loading nomDuService...&lt;/p&gt;
+
+Perso Info
+
+        &lt;p id="json-personnelle-pseudo"&gt;Loading pseudo...&lt;/p&gt;
+        &lt;p id="json-personnelle-description"&gt;Loading description...&lt;/p&gt;
+        &lt;p id="json-personnelle-discord"&gt;Loading discord...&lt;/p&gt;
+        &lt;p id="json-personnelle-jeux"&gt;Loading jeux...&lt;/p&gt;
+
+Rp info : 
+
+        &lt;p id="json-jeuxRP-nom"&gt;Loading nom...&lt;/p&gt;
+        &lt;p id="json-jeuxRP-prenom"&gt;Loading prenom...&lt;/p&gt;
+        &lt;p id="json-jeuxRP-metier"&gt;Loading metier...&lt;/p&gt;
+        &lt;p id="json-jeuxRP-grade"&gt;Loading grade...&lt;/p&gt;
+        &lt;p id="json-jeuxRP-dateNaissance"&gt;Loading dateNaissance...&lt;/p&gt;
+
+( les balises de texte sont compatible avec chaque ID ) 
+  
+</code>
+            </pre>
+        </div>
+      
+
+            <br><br>
+            <span class="flex items-center">
+                <span class="pr-6"><b> Admin Panel </b></span>
+                <span class="h-px flex-1 bg-black"></span>
+            </span>
+<br><br>
+
+
+
+ <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-2"> Script </h2>
+            <p class="text-gray-600 mb-4">
+              Le script doit etre placer tout en haut 
+            </p>
+            <pre class="bg-gray-900 text-white p-4 rounded">
+<code>
+-- Script // PKYT - account ; Secure DB
+-- 30.08.2024
+-- By EnesGP
+
+ // Doit etre placer dans les pages a securiser .
+&lt;script src="https://pkyt-database-up.vercel.app/code-source/pkyt_v3/Y-loader_admin-sercure.js"&gt;&lt;/script&gt;
+
+ // Doit etre placer dans les pages de connexion .
+&lt;script src="https://pkyt-database-up.vercel.app/code-source/pkyt_v3/P-connexion_account.js"&gt;&lt;/script&gt;
+  
+</code>
+            </pre>
+        </div>
+      
+
+      
+        
+    </div>
+
+    <!-- Script pour faire défiler vers les sections -->
+    <script>
+        document.getElementById('bdiscord').addEventListener('click', function() {
+            document.getElementById('discord').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+<script src="https://pkyt-database-up.vercel.app/code-source/tout-service-lier-pkyt.js"></script>
+</body>
+</html>
