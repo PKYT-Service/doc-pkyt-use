@@ -1,51 +1,77 @@
-<!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GFLP - PKYT |• Forum</title>
-    <link rel="stylesheet" href="styles.css">
-    <meta name="author" content="PikaYut(EnesGP), PKYT, GFLP - LSP • SRDMG">
-    <meta name="title" content="Forum par PKYT">
-    <meta name="description" content="Forum développé par PKYT pour se renseigner sur les pages">
-    <link rel="shortcut icon" type="image/x-icon" href="https://pkyt-database-up.vercel.app/favicon.ico">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://pkyt-db-img.vercel.app/PKYT/pkyt-sc/PKYT%20-%202.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://pkyt-db-img.vercel.app/PKYT/pkyt-sc/PKYT%20-%202.png">
-    
-</head>
-<body>
-    <div id="menu-toggle" class="menu-toggle">&#9776;</div>
-    <div id="menu-container" class="menu-hidden">
-        <div id="menu"></div>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   PKYT - Service // Documentations 
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+        }
+  </style>
+  <script>
+   function loadIframe(url) {
+            document.getElementById('contentFrame').src = url;
+        }
+  </script>
+ </head>
+ <body class="bg-gray-100 h-screen overflow-hidden">
+  <header class="bg-white shadow">
+   <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <div class="flex items-center">
+     <img alt="Logo of the site, a stylized book icon" class="h-10 w-10" height="40" src="" width="40"/>
+     <span class="ml-2 text-xl font-bold">
+      PKYT - Service | Docs
+     </span>
     </div>
-    <div id="content">
-        <iframe id="contentFrame" src="" frameborder="0"></iframe>
-    </div>
+    <nav class="space-x-4">
+     <a class="text-gray-700 hover:text-gray-900" href="http://pkyt-database-up.vercel.app/">
+      Home
+     </a>
+     <a class="text-gray-700 hover:text-gray-900" href="https://gflp-p.vercel.app">
+      LosFly
+     </a>
+     <a class="text-gray-700 hover:text-gray-900" href="">
+      Se connecter 
+     </a>
 
-    <script src="script.js"></script>
+     </a>
+    </nav>
+   </div>
+  </header>
+  <div class="container mx-auto px-4 py-8 flex h-full">
+   <aside class="w-1/4 bg-white p-6 rounded-lg shadow hidden md:block -ml-48 overflow-y-auto h-full">
+    <nav class="space-y-4">
 
-
-    <script>
-
-        // Fonction pour la redirection automatique
-function redirectionAutomatique(url, delayInSeconds) {
-    // Convertir le délai en millisecondes
-    let delayInMilliseconds = delayInSeconds * 10;
-
-    // Afficher un message pour informer l'utilisateur
-    console.log(`Vous serez redirigé dans ${delayInSeconds} secondes...`);
-
-    // Mettre en place le délai pour la redirection
-    setTimeout(function() {
-        // Redirection vers la nouvelle URL
-        window.location.href = url;
-    }, delayInMilliseconds);
-}
-
-// Appeler la fonction avec l'URL et le délai en secondes
-redirectionAutomatique('https://doc-pkyt-use.vercel.app/forum_pkyt/', 1);
-
-        
-    </script>
-</body>
+        <hr>
+     <button class="block text-gray-700 hover:text-gray-900" onclick="loadIframe('https://doc-pkyt-use.vercel.app/pages/Rules-PKYT-2025.html')">
+      PKYT - Service [<font color="red">Rules</font>] 
+     </button>
+     <button class="block text-gray-700 hover:text-gray-900" onclick="loadIframe('https://doc-pkyt-use.vercel.app/pages/Rules-AFF-2025.html')">
+      PKYT - AFF [<font color="red">Rules</font>] 
+     </button>
+     <button class="block text-gray-700 hover:text-gray-900" onclick="loadIframe('https://doc-pkyt-use.vercel.app/pages/Rules-Discord_PKYT-2025.html')">
+      PKYT - Discord [<font color="red">Rules</font>] 
+     </button>
+        <hr>
+     <button class="block text-gray-700 hover:text-gray-900" onclick="loadIframe('https://doc-pkyt-use.vercel.app/pages/Rules-EbsayderFlyse-2024.html')">
+      EbsayderFlyse [<font color="red">Rules</font>] 
+     </button>
+     <button class="block text-gray-700 hover:text-gray-900" onclick="loadIframe('https://doc-pkyt-use.vercel.app/pages/Others-Ebsayder_dcr.html')">
+      EbsayderFlyse [<font color="red">Declarations</font>] 
+     </button>
+    </nav>
+   </aside>
+   <main class="w-full md:w-3/4 md:ml-8 h-full">
+    <iframe class="w-full h-full" id="contentFrame" src="https://example.com" title="Content Frame">
+    </iframe>
+   </main>
+  </div>
+     <script src="https://pkyt-database-up.vercel.app/code-source/tout-service-lier-pkyt.js"></script>
+ </body>
 </html>
