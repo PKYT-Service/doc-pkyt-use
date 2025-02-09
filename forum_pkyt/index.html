@@ -1,3 +1,18 @@
+<script>
+// Récupérer le fragment (hash) de l'URL actuelle
+const hash = window.location.hash;
+
+// Définir l'URL de base
+const baseUrl = "https://doc-pkyt-use.vercel.app";
+
+// Construire la nouvelle URL avec ou sans le fragment
+const targetUrl = hash ? `${baseUrl}${hash}` : baseUrl;
+
+// Rediriger vers la nouvelle URL
+window.location.href = targetUrl;
+
+</script>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
