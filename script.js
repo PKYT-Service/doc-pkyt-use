@@ -2,9 +2,10 @@ function updateIframeFromHash() {
     const hash = window.location.hash.substring(1); // Retire le #
     if (hash) {
         const pages = {
-            "fdfd": "./pages/sqkdjfs.html",
-            "page2": "./pages/autre-page.html",
-            "doc": "https://doc-pkyt-use.vercel.app/pages/Uses-pkyt_account-V3.html"
+            "conditions": "https://doc-pkyt-use.vercel.app/forum_pkyt/page/cdt_web_pkyt.html",
+            "discord_pikayutmg": "https://doc-pkyt-use.vercel.app/forum_pkyt/page/cdt_discord-PKYT.html",
+            "discord_ebsayder": "https://doc-pkyt-use.vercel.app/forum_pkyt/page/cdt_discord-EBSDR.html",
+            "dcr_ebsayderFlyse": "https://doc-pkyt-use.vercel.app/forum_pkyt/page/dcr_EBSDR.html"
         };
         if (pages[hash]) {
             document.getElementById('contentFrame').src = pages[hash];
