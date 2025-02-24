@@ -1,0 +1,128 @@
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>PKYT - Service // Documentations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .mobile-menu {
+            display: none;
+        }
+        .menu-open .mobile-menu {
+            display: block;
+        }
+        .menu-open .menu-btn {
+            display: none;
+        }
+        .close-menu-btn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: red;
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            z-index: 50;
+        }
+        .menu-open .close-menu-btn {
+            display: block;
+        }
+    </style>
+    <script>
+        function loadIframe(url) {
+            document.getElementById('contentFrame').src = url;
+        }
+        function toggleMenu() {
+            document.body.classList.toggle('menu-open');
+        }
+    </script>
+</head>
+<body class="bg-gray-100 h-screen overflow-hidden">
+<header class="bg-white shadow">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="flex items-center">
+            <img src="" alt="Logo" class="h-10 w-10"/>
+            <span class="ml-2 text-xl font-bold">PKYT - Service | Docs</span>
+        </div>
+        <nav class="hidden md:flex space-x-4">
+            <a href="http://pkyt-database-up.vercel.app/" class="text-gray-700 hover:text-gray-900">Home</a>
+            <a href="https://gflp-p.vercel.app" class="text-gray-700 hover:text-gray-900">LosFly</a>
+            <a href="" class="text-gray-700 hover:text-gray-900">Se connecter</a>
+        </nav>
+        <button class="menu-btn md:hidden" onclick="toggleMenu()">
+            <i class="fas fa-bars text-gray-700 text-2xl"></i>
+        </button>
+    </div>
+</header>
+
+<div class="container mx-auto px-4 py-8 flex h-full">
+    <!-- Menu latéral -->
+    <aside class="w-64 bg-white p-6 rounded-lg shadow md:block hidden overflow-y-auto h-full">
+        <nav class="space-y-4">
+            <button class="block text-gray-700 hover:text-gray-900" onclick="loadIframe('https://doc-pkyt-use.vercel.app/pages/Uses-pkyt_account-V3.html')">
+                PKYT - Account [<font color="red">USe V3</font>]
+            </button>
+            <hr>
+            <button class="block text-gray-700 hover:text-gray-900" onclick="loadIframe('https://doc-pkyt-use.vercel.app/pages/Rules-PKYT-2025.html')">
+                PKYT - Service [<font color="red">Rules</font>]
+            </button>
+            <button class="block text-gray-700 hover:text-gray-900" onclick="loadIframe('https://doc-pkyt-use.vercel.app/pages/Rules-AFF-2025.html')">
+                PKYT - AFF [<font color="red">Rules</font>]
+            </button>
+            <button class="block text-gray-700 hover:text-gray-900" onclick="loadIframe('https://doc-pkyt-use.vercel.app/pages/Rules-Discord_PKYT-2025.html')">
+                PKYT - Discord [<font color="red">Rules</font>]
+            </button>
+            <hr>
+            <button class="block text-gray-700 hover:text-gray-900" onclick="loadIframe('https://doc-pkyt-use.vercel.app/pages/Rules-EbsayderFlyse-2024.html')">
+                EbsayderFlyse [<font color="red">Rules</font>]
+            </button>
+            <button class="block text-gray-700 hover:text-gray-900" onclick="loadIframe('https://doc-pkyt-use.vercel.app/pages/Others-Ebsayder_dcr.html')">
+                EbsayderFlyse [<font color="red">Declarations</font>]
+            </button>
+        </nav>
+    </aside>
+
+    <!-- Menu mobile -->
+    <aside class="mobile-menu fixed top-0 left-0 w-64 h-full bg-white shadow-md p-6 z-50 md:hidden">
+        <button class="text-gray-700 text-xl" onclick="toggleMenu()">✖</button>
+        <nav class="mt-6 space-y-4">
+            <button class="block text-gray-700 hover:text-gray-900" onclick="loadIframe('https://doc-pkyt-use.vercel.app/pages/Uses-pkyt_account-V3.html'); toggleMenu();">
+                PKYT - Account [<font color="red">USe V3</font>]
+            </button>
+            <hr>
+            <button class="block text-gray-700 hover:text-gray-900" onclick="loadIframe('https://doc-pkyt-use.vercel.app/pages/Rules-PKYT-2025.html'); toggleMenu();">
+                PKYT - Service [<font color="red">Rules</font>]
+            </button>
+            <button class="block text-gray-700 hover:text-gray-900" onclick="loadIframe('https://doc-pkyt-use.vercel.app/pages/Rules-AFF-2025.html'); toggleMenu();">
+                PKYT - AFF [<font color="red">Rules</font>]
+            </button>
+            <button class="block text-gray-700 hover:text-gray-900" onclick="loadIframe('https://doc-pkyt-use.vercel.app/pages/Rules-Discord_PKYT-2025.html'); toggleMenu();">
+                PKYT - Discord [<font color="red">Rules</font>]
+            </button>
+        </nav>
+    </aside>
+
+    <button class="close-menu-btn" onclick="toggleMenu()">✖</button>
+
+    <!-- Iframe -->
+    <main class="flex-grow h-full p-2">
+    <iframe id="contentFrame" src="https://pkyt-database-up.vercel.app" 
+        class="w-full h-full border-8 border-gray-300 rounded-lg"
+        title="Content Frame"></iframe>
+</main>
+</div>
+
+<script src="https://pkyt-database-up.vercel.app/code-source/tout-service-lier-pkyt.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>
