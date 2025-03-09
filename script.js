@@ -6,7 +6,9 @@ function updateIframeFromHash() {
             "discord_pikayutmg": "https://doc-pkyt-use.vercel.app/pages/Rules-Discord_PKYT-2025.html",
             "discord_ebsayder": "https://doc-pkyt-use.vercel.app/pages/Rules-EbsayderFlyse-2024.html",
             "dcr_ebsayderFlyse": "https://doc-pkyt-use.vercel.app/pages/Others-Ebsayder_dcr.html",
+            "pdc": "https://doc-pkyt-use.vercel.app/pages/Politique_de_confidentialite.html"
             "lspdfr": "https://doc-pkyt-use.vercel.app/pages/Others-LSPDFR_multiplayers.html"
+            
         };
         if (pages[hash]) {
             document.getElementById('contentFrame').src = pages[hash];
