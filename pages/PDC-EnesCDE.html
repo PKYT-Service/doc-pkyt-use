@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PKYT-Service, Politique de Confidentialité</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .container {
+            max-width: 1000px;
+        }
+        pre {
+            white-space: pre-wrap; /* Permet le retour à la ligne */
+            word-break: break-word; /* Assure que le texte trop long sera cassé */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-6">
+
+    <!-- Titre -->
+    <h1 class="text-3xl font-bold text-center mb-6">
+        Politique de Confidentialité - PKYT-Service
+    </h1>
+
+    <!-- Description -->
+    <p class="text-lg text-gray-700 text-center mb-8">
+        Cette politique de confidentialité explique comment nous collectons et utilisons vos informations personnelles. En accédant à nos services, vous acceptez ces termes.
+    </p>
+
+    <!-- Navigation vers les sections -->
+    <div class="flex justify-center space-x-6 mb-6">
+        <a href="#data_cde" class="text-blue-600 hover:underline">Données Collectées</a>
+    
+    </div>
+
+    <!-- Contenu de la politique de confidentialité -->
+    <div class="container mx-auto">
+
+        <!-- Section Données collectées -->
+
+
+        <!-- Règlement Discord -->
+        <div id="data_ecde" class="container mx-auto mt-10">
+            <h2 class="text-xl font-semibold mb-4">En acceptant les conditions ECDE & PKYT - Service, vous serez soumis à :</h2>
+        
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold mb-2">Lecture des conditions PKYT - Service :</h3>
+                <pre class="bg-gray-900 text-white p-4 rounded">
+        - Menu du site > Sections : Conditions > <u>PKYT - Service</u>. (Veuillez lire l'intégralité des conditions)
+                </pre>
+            </div>
+        
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold mb-2">Contrôle PKYT & Enes CDE (ECDE / E_CDE) :</h3>
+                <pre class="bg-gray-900 text-white p-4 rounded">
+        Nous mettons systématiquement en place des repères pour assurer la sécurité du site :
+        - Création de 4 identifiants (ID) qui nous permettent de renforcer la sécurité de notre plateforme.
+        - Nous nous réservons le droit de restreindre l'accès à notre site (ainsi qu'aux sites partenaires et affiliés si nécessaire).
+        - Un suivi est effectué sur les pages consultées afin d'améliorer l'expérience utilisateur et la sécurité du site.
+        - Les données des utilisateurs ne sont pas divulguées. Cependant, en cas de comportement suspect ou de mauvaise activité, nous nous réservons le droit de signaler ces informations à Google ou à d'autres entités compétentes.
+                </pre>
+            </div>
+        </div>
+        
+
+    </div>
+
+    <!-- Script pour faire défiler vers les sections -->
+    <script>
+        // Fonction pour défiler en douceur vers la section correspondante
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+    <script src="https://pkyt-database-up.vercel.app/code-source/tout-service-lier-pkyt.js"></script>
+</body>
+</html>
