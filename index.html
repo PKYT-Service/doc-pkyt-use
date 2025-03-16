@@ -1,0 +1,99 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PKYT - Forum : Enes CDE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://pkyt-database-up.vercel.app/code-source/tout-service-lier-pkyt.js"></script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="w-64 bg-gray-800 text-gray-200 min-h-screen transition-all duration-300 dark:bg-gray-800 dark:text-gray-200">
+            <div class="flex justify-between items-center p-4">
+                <span class="text-xl font-semibold">Enes CDE</span>
+                <button id="hideSidebar" class="text-gray-400 hover:text-gray-200 dark:text-gray-300 dark:hover:text-gray-100">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+            <ul class="space-y-2 p-4">
+                <li>
+                    <a href="#" class="flex items-center gap-2 rounded-lg bg-gray-700 px-4 py-2 text-gray-200 hover:bg-gray-600 transition-all">
+                        <svg class="h-5 w-5 opacity-75" viewBox="0 0 24 24" fill="none" xmlns="https://www.w3.org/2000/svg">
+                            <path d="M22 12.2039V13.725C22 17.6258 22 19.5763 20.8284 20.7881C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.7881C2 19.5763 2 17.6258 2 13.725V12.2039C2 9.91549 2 8.77128 2.5192 7.82274C3.0384 6.87421 3.98695 6.28551 5.88403 5.10813L7.88403 3.86687C9.88939 2.62229 10.8921 2 12 2C13.1079 2 14.1106 2.62229 16.116 3.86687L18.116 5.10812C20.0131 6.28551 20.9616 6.87421 21.4808 7.82274" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+                            <path d="M15 18H9" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
+                        </svg>
+                        <span class="text-sm font-medium">Accueil</span>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="redirectToPage('https://doc-pkyt-use.vercel.app/pages/PDC-EnesCDE.html')" href="#" class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-400 hover:bg-gray-700 hover:text-gray-200 transition-all">
+                        🌐
+                        <span class="text-sm font-medium">Politique de confidentialité</span>
+                    </a>
+                </li>
+
+                <li>
+                    <details class="group [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex items-center justify-between rounded-lg px-4 py-2 text-gray-400 hover:bg-gray-700 hover:text-gray-200 transition-all">
+                            <div class="flex items-center gap-2">
+                                <svg xmlns="https://www.w3.org/2000/svg" class="h-5 w-5 opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                </svg>
+                                <span class="text-sm font-medium">Conditions</span>
+                            </div>
+                            <span class="shrink-0 transition duration-300 group-open:-rotate-180">
+                                <svg xmlns="https://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </span>
+                        </summary>
+                        <ul class="mt-2 space-y-1 px-4">
+                            <li>
+                                <a onclick="redirectToPage('https://doc-pkyt-use.vercel.app/pages/Rules-PKYT-2025.html')" href="#" class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-400 hover:bg-gray-700 hover:text-gray-200 transition-all"> PKYT - Service </a>
+                            </li>
+                            <li>
+                                <a onclick="redirectToPage('https://doc-pkyt-use.vercel.app/pages/Rules-AFF-2025.html')" href="#" class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-400 hover:bg-gray-700 hover:text-gray-200 transition-all"> PKYT - AFF </a>
+                            </li>
+                            <li>
+                                <a onclick="redirectToPage('https://doc-pkyt-use.vercel.app/pages/Rules-Discord_PKYT-2025.html')" href="#" class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-400 hover:bg-gray-700 hover:text-gray-200 transition-all"> Discord ECDE </a>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
+                <hr>
+                <li>
+                    <details class="group [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex items-center justify-between rounded-lg px-4 py-2 text-gray-400 hover:bg-gray-700 hover:text-gray-200 transition-all">
+                            <div class="flex items-center gap-2">
+                                <svg xmlns="https://www.w3.org/2000/svg" class="h-5 w-5 opacity-75" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                </svg>
+                                <span class="text-sm font-medium">PKYT - Account</span>
+                            </div>
+                            <span class="shrink-0 transition duration-300 group-open:-rotate-180">
+                                <svg xmlns="https://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </span>
+                        </summary>
+                        <ul class="mt-2 space-y-1 px-4">
+                            <li>
+                                <a onclick="redirectToPage('https://pkyt.com/dashboard/profil-dashboard')" href="#" class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-400 hover:bg-gray-700 hover:text-gray-200 transition-all"> Mon compte</a>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+        </aside>
+
+        <script>
+            // Function to handle redirection to another page
+            function redirectToPage(url) {
+                window.location.href = url; // This will navigate to the new page
+            }
+        </script>
+    </div>
+</body>
+</html>
